@@ -6,6 +6,10 @@ tb.cmds = (function() {
 	var _cmds = {},
 		_current;
 
+	function invalidCommandError(name) {
+		throw new Error('Command "'+name+'" does not exist');
+	}
+
 	return {
 		add: function(cmd) {
 			_cmds[cmd.name] = cmd;
@@ -14,7 +18,7 @@ tb.cmds = (function() {
 			if (_cmds[name]) {
 				return _cmds[name];
 			} else {
-				throw 'Command "'+name+'" does not exist';
+				invalidCommandError(name);
 			}
 		},
 		length: function() {
@@ -31,7 +35,7 @@ tb.cmds = (function() {
 			if (_cmds[name]) {
 				_current = _cmds[name];
 			} else {
-				throw 'Command "'+name+'" does not exist';
+				invalidCommandError(name);
 			}
 		},
 		execCurrent: function() {
