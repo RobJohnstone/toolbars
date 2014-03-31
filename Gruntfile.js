@@ -33,14 +33,14 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
-                tasks: ['jshint'],
+                tasks: ['jshint', 'test:watch'],
                 options: {
                     livereload: true
                 }
             },
             jstest: {
                 files: ['test/spec/{,*/}*.js'],
-                tasks: ['test:watch']
+                tasks: ['jshint', 'test:watch']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
