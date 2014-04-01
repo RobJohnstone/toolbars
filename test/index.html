@@ -12,6 +12,7 @@
     <script>mocha.setup('bdd')</script>
     <script src="bower_components/chai/chai.js"></script>
     <script src="bower_components/sinonjs/sinon.js"></script>
+    <script src="phantomjsPolyfills.js"></script>
     <script>
         var assert = chai.assert;
         var expect = chai.expect;
@@ -21,10 +22,12 @@
     <!-- include source files here... -->
     <script src="scripts/cmds.js"></script>
     <script src="scripts/btn.js"></script>
+    <script src="scripts/toolbar.js"></script>
 
     <!-- include spec files here... -->
     <script src="spec/cmdsTest.js"></script>
     <script src="spec/btnTest.js"></script>
+    <script src="spec/toolbarTest.js"></script>
 
     <script>mocha.run()</script>
 </body>

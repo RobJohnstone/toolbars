@@ -26,7 +26,7 @@
                     setCurrentCmdSpy = sinon.stub(tb.cmds, 'setCurrent');
                 btn.click();
                 expect(setCurrentCmdSpy.called).to.equal(true);
-                expect(setCurrentCmdSpy.calledWith(cmd));
+                expect(setCurrentCmdSpy.calledWith(cmd)).to.equal(true);
                 setCurrentCmdSpy.restore();
             });
 
@@ -37,7 +37,7 @@
                     btn = new tb.Btn(cmd, [], true);
                 btn.click();
                 expect(cmd.exec.called).to.equal(true);
-                expect(cmd.exec.calledWith(undefined));
+                expect(cmd.exec.calledWith(undefined)).to.equal(true);
             });
         });
     });
